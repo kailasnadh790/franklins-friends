@@ -4,8 +4,9 @@ header .nav-wrapper {
   width: 100%;
   z-index: 2;
   position: fixed;
+  padding: 1rem 0;
 }
-
+ 
 header nav {
   box-sizing: border-box;
   display: grid;
@@ -15,10 +16,19 @@ header nav {
   align-items: center;
   gap: 0 2em;
   margin: auto;
-  max-width: 1264px;
+  max-width: 102.4rem;
   height: var(--nav-height);
   padding: 0 1rem;
   font-family: var(--body-font-family);
+}
+
+*, :after, :before {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 header nav[aria-expanded="true"] {
@@ -139,31 +149,50 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
 }
 
 /* brand */
-header .nav-brand {
-  grid-area: brand;
-  flex-basis: 128px;
-  font-size: var(--heading-font-size-s);
-  font-weight: 700;
-  line-height: 1;
+@media screen and (min-width: 1024px) {
+  header .nav-wrapper{
+      padding: 2rem 0;
+  }
+}
+
+header .nav-wrapper{
+  padding: 2rem 0;
+}
+
+header .nav-brand{
+  margin-right: 15%;
+  padding: 2rem 0;
 }
 
 header nav .nav-brand img {
+  display: inline;
   width: 128px;
   height: auto;
+}
+
+@media screen and (min-width: 1024px) {
+  header nav .nav-brand img  {
+    width: 19.8rem;
+}
 }
 
 /* sections */
 header nav .nav-sections {
   grid-area: sections;
-  flex: 1 1 auto;
-  display: none;
+  display: flex;
   visibility: hidden;
   background-color: var(--overlay-color);
+  margin-right: 1.5rem;
+}
+
+header nav .nav-sections p{
+  margin-right: 1.5rem;
 }
 
 header nav[aria-expanded="true"] .nav-sections {
-  display: block;
+  display: flex;
   visibility: visible;
+  margin-right: 1.5rem;
   align-self: start;
 }
 
@@ -272,4 +301,13 @@ header nav .nav-sections ul > li > ul > li {
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
+  display: flex;
+  padding: 0.5rem 0;
+}
+header nav .nav-tools p{
+  margin-right: 2rem;
+}
+
+img {
+  max-width: 100%;
 }

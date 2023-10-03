@@ -130,6 +130,7 @@ const ICONS_CACHE = {};
  */
 export async function decorateIcons(element) {
   // Prepare the inline sprite
+  //debugger;
   let svgSprite = document.getElementById('franklin-svg-sprite');
   if (!svgSprite) {
     const div = document.createElement('div');
